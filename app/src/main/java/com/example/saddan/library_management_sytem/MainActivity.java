@@ -13,7 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements
+        MainFragment_ListView.MainFragmentInterface
 {
     private FragmentManager fragmentManager;
     private UserPrefferences userPrefferences;
@@ -100,5 +101,15 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Admin Logout successfully", Toast.LENGTH_SHORT).show();
             startActivity(reStart);
         }
+    }
+
+    @Override
+    public void gotoAddbookFragment()
+    {
+        FragmentTransaction ft=fragmentManager.beginTransaction();
+        Add_Book_Fragment add_book_fragment=new Add_Book_Fragment();
+        ft.replace(R.id.fragment_containerID,add_book_fragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 }

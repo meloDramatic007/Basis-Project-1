@@ -18,6 +18,7 @@ public class MainFragment_ListView extends Fragment
     private ListView listView;
     private Button addBookbtn;
     private UserPrefferences userPrefferences;
+    private MainFragmentInterface gotoAddbookInterface;
     public MainFragment_ListView()
     {
         // Required empty public constructor
@@ -44,7 +45,18 @@ public class MainFragment_ListView extends Fragment
             addBookbtn.setVisibility(view.VISIBLE);
         }
 
+        addBookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                  gotoAddbookInterface= (MainFragmentInterface) getActivity();
+                  gotoAddbookInterface.gotoAddbookFragment();
+            }
+        });
 
+    }
 
+    interface MainFragmentInterface{
+        void gotoAddbookFragment();
     }
 }
