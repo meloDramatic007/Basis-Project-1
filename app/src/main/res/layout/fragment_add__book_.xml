@@ -8,30 +8,36 @@
 
 
     <EditText
+        android:id="@+id/book_title_ID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter book title"
         android:textAlignment="center"/>
 
     <EditText
+        android:id="@+id/writer_nameID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter writter name"
         android:textAlignment="center"/>
     <EditText
+        android:id="@+id/book_generaID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter book genera"
         android:textAlignment="center"/>
     <EditText
+        android:id="@+id/price_ID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter price"
         android:textAlignment="center"/>
     <Button
+        android:id="@+id/add_tolist_btn_ID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ADD to list"/>
-
+        android:text="Add To List"
+        android:textAllCaps="false"
+        />
 
 </LinearLayout>
