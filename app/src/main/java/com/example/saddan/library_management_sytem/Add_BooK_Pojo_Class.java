@@ -1,12 +1,14 @@
 package com.example.saddan.library_management_sytem;
 
-public class Add_BooK_Pojo_Class
+import java.io.Serializable;
+
+public class Add_BooK_Pojo_Class implements Serializable
 {
     private String Bookname;
     private String writer_name;
     private String Genera;
     private  String price;
-    private String _id;
+    private int id;
 
     public Add_BooK_Pojo_Class(String book_title, String writer_name, String book_genera, String price) {
         Bookname = book_title;
@@ -15,16 +17,16 @@ public class Add_BooK_Pojo_Class
         this.price = price;
     }
 
-    public Add_BooK_Pojo_Class(String bookstring, String writer_name, String genera, String price, String _id)
+    public Add_BooK_Pojo_Class(String Bookname, String Writername, String genera, String price, int id)
     {
-        Bookname = bookstring;
-        this.writer_name = writer_name;
+        Bookname = Bookname;
+        this.writer_name = Writername;
         Genera = genera;
         this.price = price;
-        this._id = _id;
+        this.id = id;
     }
 
-    public String getBookstring() {
+    public String getBook_name() {
         return Bookname;
     }
 
@@ -40,8 +42,8 @@ public class Add_BooK_Pojo_Class
         return price;
     }
 
-    public String get_id() {
-        return _id;
+    public int get_id() {
+        return  id;
     }
 
 }

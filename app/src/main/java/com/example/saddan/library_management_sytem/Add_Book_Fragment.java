@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class Add_Book_Fragment extends Fragment implements View.OnClickListener
@@ -17,7 +18,8 @@ public class Add_Book_Fragment extends Fragment implements View.OnClickListener
     EditText Book_Title,Writer_Name,Book_Genera,Price;
     Button Add_To_ListBtn;
 
-    public Add_Book_Fragment(String book_title, String writer_name, String book_genera, String price) {
+    public Add_Book_Fragment()
+    {
         // Required empty public constructor
     }
 
@@ -55,8 +57,19 @@ public class Add_Book_Fragment extends Fragment implements View.OnClickListener
                 book_genera=Book_Genera.getText().toString();
                 price=Price.getText().toString();
 
-             Add_Book_Fragment add_book_fragment=new Add_Book_Fragment(book_title,writer_name,book_genera,price);
 
+               Add_BooK_Pojo_Class addBook=new Add_BooK_Pojo_Class(book_title,writer_name,book_genera,price);
+
+               Add_Book_source book_source=new Add_Book_source(getActivity());
+               boolean saveBookinformation=book_source.saveBookinformation(addBook);
+               if(saveBookinformation)
+               {
+                   Toast.makeText(getActivity(), "Saved Sucessfully", Toast.LENGTH_SHORT).show();
+               }
+               else
+               {
+                   Toast.makeText(getActivity(), "Failed....", Toast.LENGTH_SHORT).show();
+               }
                 break;
             }
         }

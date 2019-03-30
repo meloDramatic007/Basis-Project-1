@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 
 public class MainFragment_ListView extends Fragment
 {
@@ -38,7 +40,7 @@ public class MainFragment_ListView extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
             userPrefferences=new UserPrefferences(getActivity());
-        listView=view.findViewById(R.id.list_viewID);
+           listView=view.findViewById(R.id.list_viewID);
         addBookbtn=view.findViewById(R.id.addBook_btnID);
         if(userPrefferences.getAdminLoginStatus())
         {
@@ -53,6 +55,11 @@ public class MainFragment_ListView extends Fragment
                   gotoAddbookInterface.gotoAddbookFragment();
             }
         });
+
+        Add_Book_source add_book_source=new Add_Book_source(getActivity());
+        ArrayList<Add_BooK_Pojo_Class> addbook=add_book_source.getAllBook();
+        Book_list_view_adapter book_list_adapter=new Book_list_view_adapter(getActivity(),addbook);
+        listView.setAdapter(book_list_adapter);
 
     }
 

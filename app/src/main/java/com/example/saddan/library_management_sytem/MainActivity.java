@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements
     public void gotoAddbookFragment()
     {
         FragmentTransaction ft=fragmentManager.beginTransaction();
-        Add_Book_Fragment add_book_fragment=new Add_Book_Fragment(book_title, writer_name, book_genera, price);
+        Add_Book_Fragment add_book_fragment=new Add_Book_Fragment();
         ft.replace(R.id.fragment_containerID,add_book_fragment);
         ft.addToBackStack(null);
         ft.commit();
