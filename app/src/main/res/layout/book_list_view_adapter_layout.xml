@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <TextView
         android:id="@+id/book_name_adapterID"
@@ -11,11 +12,13 @@
         android:layout_height="wrap_content"
         android:text="Book name"/>
     <TextView
+        android:layout_below="@id/book_name_adapterID"
         android:id="@+id/writer_name_adapterID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="writer name"/>
     <TextView
+        android:layout_below="@id/writer_name_adapterID"
         android:id="@+id/genera_adapterID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

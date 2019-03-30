@@ -10,20 +10,21 @@ public class Add_BooK_Pojo_Class implements Serializable
     private  String price;
     private int id;
 
-    public Add_BooK_Pojo_Class(String book_title, String writer_name, String book_genera, String price) {
-        Bookname = book_title;
-        this.writer_name = writer_name;
-        Genera = book_genera;
-        this.price = price;
-    }
-
     public Add_BooK_Pojo_Class(String Bookname, String Writername, String genera, String price, int id)
     {
-        Bookname = Bookname;
+        this.Bookname = Bookname;
         this.writer_name = Writername;
-        Genera = genera;
+        this.Genera = genera;
         this.price = price;
         this.id = id;
+    }
+
+    public Add_BooK_Pojo_Class(String book_title, String writer_name, String book_genera, String price)
+    {
+        this.Bookname = book_title;
+        this.writer_name = writer_name;
+        this.Genera = book_genera;
+        this.price = price;
     }
 
     public String getBook_name() {

@@ -8,16 +8,17 @@ public class Book_Database_helper extends SQLiteOpenHelper
 {
 
     public static final String DATABASE_NAME="db_book";
-    public static int VERSION=1;
+    public static int VERSION=3;
     public  static final String BOOK_TABLE_NAME="tbl_book";
-    public  static final String BOOK_COL_ID="tbl_book";
+    public  static final String BOOK_COL_ID="id";
     public  static final String BOOK_COL_BOOKNAME="book_name";
     public  static final String BOOK_COL_BOOKWRITER="writer_name";
     public  static final String BOOK_COL_BOOKGENERA="book_genera";
     public  static final String BOOK_COL_PRICE="book_price";
 
-    public static  final  String CREAT_TABLE_BOOK="CREATE TABLE  "+BOOK_TABLE_NAME+"("+
-            BOOK_COL_ID+"INTEGER PRIMARY KEY,"+
+    public static  final  String CREAT_TABLE_BOOK="CREATE TABLE  "+
+            BOOK_TABLE_NAME+"("+
+            BOOK_COL_ID+" INTEGER PRIMARY KEY,"+
             BOOK_COL_BOOKNAME +" TEXT,"+
             BOOK_COL_BOOKWRITER+" TEXT,"+
             BOOK_COL_BOOKGENERA+" TEXT,"+
